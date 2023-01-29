@@ -1,14 +1,22 @@
-<h1><%= @post.title %></h1>
+<div class="show_content">
 
+<h1><%= @post.title%></h1>
 <p><%= @post.body %></p>
-<ul>
-  <li><%= link_to "Edit", edit_post_path(@post) %></li>
-  <li><%= link_to "Delete Post", post_path(@post), data: {
+<div class="show-btn">
+<span>
+<%= link_to "Edit", edit_post_path(@post) %></li>
+</span>
+<span>
+<%= link_to "Delete Post", post_path(@post), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure you want to delete this post?"
-                  } %></li>
-</ul>
+                  } 
+%></span>
+</div>
+</div>
+<div class="show_comments">
 <h2>Comments</h2>
 <%= render @post.comments %>
-
+</div>
 <%= render "comments/form"%>
+</div>

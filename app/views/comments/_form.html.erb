@@ -1,14 +1,14 @@
 
 <h2>Add a comment:</h2>
 <%= form_with model: [ @post, @post.comments.build ] do |form| %>
-  <p>
-    <%= form.label :user %><br>
+  <span>
+    <%= form.label :comment %><br>
     <%= form.text_field :user %>
-  </p>
-  <p>
+  </span>
+  <div>
     <%= form.label :body %><br>
     <%= form.text_area :body %>
-  </p>
+  </div>
   <p>
     <%= form.submit %>
   </p>
